@@ -18,8 +18,11 @@ int	ft_lstsize(t_list *lst);
 t_list	*ft_lstlast(t_list *lst);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 t_list	*ft_lstnew(int content);
-long	ft_atoi(const char *str);
+int	ft_atoi(const char *str);
 void	ft_error(void);
+int	_checking(char **av, int ac);
+void	check_space(char *av);
+int	check_sign(char *av, int i);
 
 
 #endif

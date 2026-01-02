@@ -6,13 +6,13 @@
 /*   By: anait-il <anait-il@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/02 10:21:58 by anait-il          #+#    #+#             */
-/*   Updated: 2026/01/02 18:33:02 by anait-il         ###   ########.fr       */
+/*   Updated: 2026/01/02 19:54:10 by anait-il         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-long	ft_atoi(const char *str)
+int	ft_atoi(const char *str)
 {
 	int		i;
 	int		sign;
@@ -31,9 +31,9 @@ long	ft_atoi(const char *str)
 	}
 	while (str[i] >= '0' && str[i] <= '9')
 	{
+		res = res * 10 + (str[i] - 48);
 		if ((res * sign > 2147483647) || (res * sign < -2147483648))
 			ft_error();
-		res = res * 10 + (str[i] - 48);
 		i++;
 	}
 	return (res * sign);
