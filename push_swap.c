@@ -6,7 +6,7 @@
 /*   By: anait-il <anait-il@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/02 10:21:16 by anait-il          #+#    #+#             */
-/*   Updated: 2026/01/02 18:34:59 by anait-il         ###   ########.fr       */
+/*   Updated: 2026/01/02 19:35:34 by anait-il         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int	check_sign(char *av, int i)
 	return (1);
 }
 
-int	check_space(char *av)
+void	check_space(char *av)
 {
 	int	i;
 
@@ -54,9 +54,9 @@ int	check_space(char *av)
 		if (av[i] == ' ')
 			i++;
 		else
-			return (1);
+			return ;
 	}
-	return (0);
+	ft_error();
 }
 
 int	_checking(char **av, int ac)	
@@ -78,10 +78,11 @@ int	_checking(char **av, int ac)
 			}
 			if ((av[i][j] < '0' || av[i][j] > '9' || av[i][j] == 9) && av[i][j] != ' ')
 				return (0);
+			if (av[i][j] >= '0' && av[i][j] <= '9' && (av[i][j+1] == '+' || av[i][j + 1] == '-'))
+				ft_error();
 			j++;
 		}
-		if (!check_space(av[i]))
-			ft_error();
+		check_space(av[i]); 
 		i++;
 	}
 	return (1);
