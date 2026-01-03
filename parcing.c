@@ -63,6 +63,7 @@ int	_checking(char **av, int ac)
 	return (1);
 }
 
+
 int	check_duplicate(t_list *last, int content)
 {
 	while (last)
@@ -73,3 +74,4 @@ int	check_duplicate(t_list *last, int content)
 	}
 	return (0);
 }
+

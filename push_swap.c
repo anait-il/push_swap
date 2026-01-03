@@ -41,7 +41,7 @@ void	fil_stack(t_list **stack_a, char **av, int ac)
 int main(int ac, char **av)
 {
 	t_list	*stack_a = NULL;
-	// t_list	*stack_b = NULL;
+	 t_list	*stack_b = NULL;
 
 	if (ac == 1)
 		return 0;
@@ -54,3 +54,4 @@ int main(int ac, char **av)
 		stack_a = stack_a->next;
 	}
 }
+

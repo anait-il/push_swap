@@ -23,6 +23,7 @@ void	ft_error(void);
 int	_checking(char **av, int ac);
 void	check_space(char *av);
 int	check_sign(char *av, int i);
+<<<<<<< HEAD
 int	check_duplicate(t_list *last, int content);
 
 
