@@ -6,11 +6,26 @@
 /*   By: abdelkabir <abdelkabir@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/02 10:21:16 by anait-il          #+#    #+#             */
-/*   Updated: 2026/01/03 21:47:12 by abdelkabir       ###   ########.fr       */
+/*   Updated: 2026/01/05 00:46:26 by abdelkabir       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	ft_index(t_list **stack_a)
+{
+	t_list	*lst;
+	int		i;
+
+	lst = *stack_a;
+	i = 0;
+	while (lst)
+	{
+		lst->index = i;
+		i++;
+		lst = lst->next;
+	}
+}
 
 void	fil_stack(t_list **stack_a, char **av, int ac)
 {
@@ -48,25 +63,17 @@ int main(int ac, char **av)
 	if (!_checking(av, ac))
 		return (write(2, "Error\n", 6));
 	fil_stack(&stack_a, av, ac);
-	t_list *lst = stack_a;
+	ft_index(&stack_a);
 	write(1, "\n", 1);
 	if (ac == 4)
+		ft_sort_3num(&stack_a);
+	if (ac == 6)
+		ft_sort_5num(&stack_a, &stack_b);
+	t_list *lst = stack_a;
+	while (lst)
 	{
-		if (stack_a->content > stack_a->next->content)
-		ft_sa(&stack_a);
-		if (stack_a->content > stack_a->next->next->content)
-		ft_rra(&stack_a);
-		if (stack_a->next->content > stack_a->next->next->content)
-		{
-			ft_rra(&stack_a);
-			ft_sa(&stack_a);
-		}
+		printf("%d\n", lst->content);
+		lst = lst->next;
 	}
-	int i = 0;
-	while (stack_a)
-	{
-		printf("%d\n", stack_a->content);
-		stack_a = stack_a->next;
-		i++;
-	}
+	return (0);
 }
