@@ -2,18 +2,16 @@
 
 void	ft_swap_list(t_list **head)
 {
-	t_list	last;
-
-	if (!head)
+	t_list	*lst;
+	if (!head || !*head)
 		return;
 	if (ft_lstsize(*head) == 1)
 		return;
-	last = *head;
-	*head = last->next;
-	last->next = *head->next;
-	*head->next = last;
+	lst = *head;
+	*head = lst->next;
+	lst->next = (*head)->next;
+	(*head)->next = lst;
 }
-
 void	ft_sa(t_list **stack_a)
 {
 	ft_swap_list(stack_a);

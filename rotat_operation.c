@@ -6,12 +6,12 @@ void	rotate_list(t_list **head)
 	t_list	*last_node;
 
 	lst = *head;
-	if (!head)
+	if (!head || !*head)
 		return;
 	if (ft_lstsize(*head) == 1)
 		return;
 	*head = lst->next;
-	last_node = ft_lstlast(*lst);
+	last_node = ft_lstlast(lst);
 	last_node->next = lst;
 	lst->next = NULL;
 }

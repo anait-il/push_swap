@@ -6,7 +6,7 @@
 /*   By: abdelkabir <abdelkabir@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/02 10:21:16 by anait-il          #+#    #+#             */
-/*   Updated: 2026/01/03 12:45:10 by abdelkabir       ###   ########.fr       */
+/*   Updated: 2026/01/03 21:47:12 by abdelkabir       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,17 +41,32 @@ void	fil_stack(t_list **stack_a, char **av, int ac)
 int main(int ac, char **av)
 {
 	t_list	*stack_a = NULL;
-	 t_list	*stack_b = NULL;
+	t_list	*stack_b = NULL;
 
 	if (ac == 1)
 		return 0;
 	if (!_checking(av, ac))
 		return (write(2, "Error\n", 6));
 	fil_stack(&stack_a, av, ac);
+	t_list *lst = stack_a;
+	write(1, "\n", 1);
+	if (ac == 4)
+	{
+		if (stack_a->content > stack_a->next->content)
+		ft_sa(&stack_a);
+		if (stack_a->content > stack_a->next->next->content)
+		ft_rra(&stack_a);
+		if (stack_a->next->content > stack_a->next->next->content)
+		{
+			ft_rra(&stack_a);
+			ft_sa(&stack_a);
+		}
+	}
+	int i = 0;
 	while (stack_a)
 	{
 		printf("%d\n", stack_a->content);
 		stack_a = stack_a->next;
+		i++;
 	}
 }
-
