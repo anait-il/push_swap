@@ -6,7 +6,7 @@
 /*   By: anait-il <anait-il@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/02 10:21:16 by anait-il          #+#    #+#             */
-/*   Updated: 2026/01/05 17:47:37 by anait-il         ###   ########.fr       */
+/*   Updated: 2026/01/05 21:01:36 by anait-il         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,11 @@ int main(int ac, char **av)
 	ft_index(&stack_a);
 	if (ac == 4)
 		ft_sort_3num(&stack_a);
-	if (ac == 6)
+	else if (ac == 6)
 		ft_sort_5num(&stack_a, &stack_b);
+	// else
+	// 	ft_sort(&stack_a, &stack_b);
+	else
+		ft_sort_100(&stack_a, &stack_b);
 	return (0);
 }

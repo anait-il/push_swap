@@ -6,7 +6,7 @@
 /*   By: anait-il <anait-il@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 18:08:38 by anait-il          #+#    #+#             */
-/*   Updated: 2026/01/05 18:08:41 by anait-il         ###   ########.fr       */
+/*   Updated: 2026/01/05 21:21:40 by anait-il         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,9 @@ void	ft_rrr(t_list **stack_a, t_list **stack_b);
 void	ft_index(t_list **stack_a);
 void	ft_sort_3num(t_list **stack_a);
 void	ft_sort_5num(t_list **stack_a, t_list **stack_b);
+void	ft_sort(t_list **stack_a, t_list **stack_b);
+size_t	_find_smollest_num(t_list *stack_a);
+void	ft_sort_100(t_list **stack_a, t_list **stack_b);
+
 
 #endif
