@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abdelkabir <abdelkabir@student.42.fr>      +#+  +:+       +#+        */
+/*   By: anait-il <anait-il@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/02 10:21:16 by anait-il          #+#    #+#             */
-/*   Updated: 2026/01/05 00:46:26 by abdelkabir       ###   ########.fr       */
+/*   Updated: 2026/01/05 17:47:37 by anait-il         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,16 +64,9 @@ int main(int ac, char **av)
 		return (write(2, "Error\n", 6));
 	fil_stack(&stack_a, av, ac);
 	ft_index(&stack_a);
-	write(1, "\n", 1);
 	if (ac == 4)
 		ft_sort_3num(&stack_a);
 	if (ac == 6)
 		ft_sort_5num(&stack_a, &stack_b);
-	t_list *lst = stack_a;
-	while (lst)
-	{
-		printf("%d\n", lst->content);
-		lst = lst->next;
-	}
 	return (0);
 }

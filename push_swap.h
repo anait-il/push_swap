@@ -40,6 +40,7 @@ void	ft_rra(t_list **stack_a);
 void	ft_rrb(t_list **stack_b);
 void	ft_rrr(t_list **stack_a, t_list **stack_b);
 //sort
+void	ft_index(t_list **stack_a);
 void	ft_sort_3num(t_list **stack_a);
 void	ft_sort_5num(t_list **stack_a, t_list **stack_b);
 

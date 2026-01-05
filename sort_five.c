@@ -31,8 +31,9 @@ void	ft_sort_5num(t_list **stack_a, t_list **stack_b)
 	size = ft_lstsize(*stack_a);
 	while (ft_lstsize(*stack_a) != 3)
 	{
+		ft_index(stack_a);
 		rank = _find_smollest_num(*stack_a);
-		if (rank >  size / 2)
+		if (rank > (size / 2))
 		{
 			while ((*stack_a)->index != rank)
 				ft_rra(stack_a);
@@ -42,11 +43,9 @@ void	ft_sort_5num(t_list **stack_a, t_list **stack_b)
 			while ((*stack_a)->index != rank)
 				ft_ra(stack_a);
 		}
-		ft_pa(stack_b, stack_a);
+		ft_pb(stack_b, stack_a);
 	}
 	ft_sort_3num(stack_a);
-	if ((*stack_b)->content > (*stack_b)->next->content)
-		ft_sb(stack_b);
-	ft_pb(stack_a, stack_b);
-	ft_pb(stack_a, stack_b);
+	ft_pa(stack_a, stack_b);
+	ft_pa(stack_a, stack_b);
 }
