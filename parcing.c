@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parcing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abdelkabir <abdelkabir@student.42.fr>      +#+  +:+       +#+        */
+/*   By: anait-il <anait-il@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/02 19:40:45 by anait-il          #+#    #+#             */
-/*   Updated: 2026/01/03 12:26:09 by abdelkabir       ###   ########.fr       */
+/*   Updated: 2026/01/05 22:24:02 by anait-il         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,6 @@ int	_checking(char **av, int ac)
 	}
 	return (1);
 }
-
 
 int	check_duplicate(t_list *last, int content)
 {

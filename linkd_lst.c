@@ -6,15 +6,15 @@
 /*   By: anait-il <anait-il@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/02 10:21:27 by anait-il          #+#    #+#             */
-/*   Updated: 2026/01/02 10:21:30 by anait-il         ###   ########.fr       */
+/*   Updated: 2026/01/06 22:32:54 by anait-il         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_lstsize(t_list *lst)
+size_t	ft_lstsize(t_list *lst)
 {
-	int		i;
+	size_t	i;
 	t_list	*n1;
 
 	i = 0;

@@ -6,7 +6,7 @@
 /*   By: anait-il <anait-il@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 18:08:38 by anait-il          #+#    #+#             */
-/*   Updated: 2026/01/05 21:21:40 by anait-il         ###   ########.fr       */
+/*   Updated: 2026/01/06 22:36:07 by anait-il         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@
 
 typedef struct			s_list
 {
+	size_t				cost;
+	struct s_list		*target;
 	size_t				index;
 	int					content;
 	struct s_list		*next;
@@ -58,6 +60,8 @@ void	ft_sort_5num(t_list **stack_a, t_list **stack_b);
 void	ft_sort(t_list **stack_a, t_list **stack_b);
 size_t	_find_smollest_num(t_list *stack_a);
 void	ft_sort_100(t_list **stack_a, t_list **stack_b);
+//turk
+void	cost(t_list **stack_a, t_list **stack_b);
 
 
 #endif
