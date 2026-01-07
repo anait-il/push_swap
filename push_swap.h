@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anait-il <anait-il@student.42.fr>          +#+  +:+       +#+        */
+/*   By: abdelkabir <abdelkabir@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 18:08:38 by anait-il          #+#    #+#             */
-/*   Updated: 2026/01/06 22:36:07 by anait-il         ###   ########.fr       */
+/*   Updated: 2026/01/07 01:09:58 by abdelkabir       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ typedef struct			s_list
 size_t	ft_strlcpy(char *dst, const char *src, size_t len);
 char	**ft_split(char const *s, char c);
 void	ft_lstadd_front(t_list **lst, t_list *new);
-int	ft_lstsize(t_list *lst);
+size_t	ft_lstsize(t_list *lst);
 t_list	*ft_lstlast(t_list *lst);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 t_list	*ft_lstnew(int content);
@@ -62,6 +62,7 @@ size_t	_find_smollest_num(t_list *stack_a);
 void	ft_sort_100(t_list **stack_a, t_list **stack_b);
 //turk
 void	cost(t_list **stack_a, t_list **stack_b);
+size_t	smollest_cost(t_list **stack_a);
 
 
 #endif

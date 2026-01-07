@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   cost.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anait-il <anait-il@student.42.fr>          +#+  +:+       +#+        */
+/*   By: abdelkabir <abdelkabir@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 22:10:30 by anait-il          #+#    #+#             */
-/*   Updated: 2026/01/06 22:39:27 by anait-il         ###   ########.fr       */
+/*   Updated: 2026/01/06 23:36:55 by abdelkabir       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	smollest_cost(t_list **stack_a)
+size_t	smollest_cost(t_list **stack_a)
 {
 	t_list	*lst;
 	t_list	*tmp;
@@ -20,6 +20,7 @@ void	smollest_cost(t_list **stack_a)
 
 	lst = *stack_a;
 	tmp = *stack_a;
+	cost = tmp->cost;
 	while (lst)
 	{
 		if (lst->cost < tmp->cost)
@@ -29,6 +30,7 @@ void	smollest_cost(t_list **stack_a)
 		}
 		lst = lst->next;
 	}
+	return (cost);
 }
 
 void	cost(t_list **stack_a, t_list **stack_b)
