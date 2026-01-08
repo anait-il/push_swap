@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abdelkabir <abdelkabir@student.42.fr>      +#+  +:+       +#+        */
+/*   By: anait-il <anait-il@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 18:08:38 by anait-il          #+#    #+#             */
-/*   Updated: 2026/01/07 01:09:58 by abdelkabir       ###   ########.fr       */
+/*   Updated: 2026/01/07 22:45:07 by anait-il         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,13 @@ size_t	_find_smollest_num(t_list *stack_a);
 void	ft_sort_100(t_list **stack_a, t_list **stack_b);
 //turk
 void	cost(t_list **stack_a, t_list **stack_b);
-size_t	smollest_cost(t_list **stack_a);
-
+t_list	*smollest_cost(t_list **stack_a);
+t_list	*smollest_targ(t_list *lst, t_list *node);
+t_list	*biggest_num(t_list *stack_a);
+void	target_of_node(t_list **stack_a, t_list **stack_b);
+void	reverse_targ(t_list **stack_a, t_list **stack_b);
+t_list	*big_targ(t_list *lst, t_list *node);
+t_list	*small(t_list *stack_a);
+void	push_back(t_list **stack_a, t_list **stack_b);
 
 #endif

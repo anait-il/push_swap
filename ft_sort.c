@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sort.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abdelkabir <abdelkabir@student.42.fr>      +#+  +:+       +#+        */
+/*   By: anait-il <anait-il@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 18:20:38 by anait-il          #+#    #+#             */
-/*   Updated: 2026/01/07 02:10:13 by abdelkabir       ###   ########.fr       */
+/*   Updated: 2026/01/08 01:12:30 by anait-il         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ t_list	*biggest_num(t_list *stack_a)
 	return (tmp);
 }
 
-t_list *smollest_targ(t_list *lst, t_list *node)
+t_list	*smollest_targ(t_list *lst, t_list *node)
 {
 	int		ftarget;
 	t_list	*target;
@@ -81,24 +81,25 @@ void	ft_sort(t_list **stack_a, t_list **stack_b)
 
 	ft_pb(stack_a, stack_b);
 	ft_pb(stack_a, stack_b);
+	if ((*stack_b)->content > (*stack_b)->next->content)
+		ft_sb(stack_b);
 	while (ft_lstsize(*stack_a) != 3)
 	{
-		lst = *stack_a;
 		ft_index(stack_a);
 		ft_index(stack_b);
 		target_of_node(stack_a, stack_b);
 		cost(stack_a, stack_b);
-		smoll_cost = smollest_cost(stack_a);
-		while ((*stack_a)->cost != smoll_cost)
+		lst = smollest_cost(stack_a);
+		while ((*stack_a)->cost != lst->cost)
 		{
 			if ((ft_lstsize(*stack_a) / 2) >=  lst->index)
 				ft_ra(stack_a);
 			else
 				ft_rra(stack_a);
 		}
-		while ((*stack_b)->index != (*stack_a)->target->index)
+		while ((*stack_b) != (*stack_a)->target)
 		{
-			if ((ft_lstsize(*stack_b) / 2) >=  (*stack_a)->target->index)
+			if ((ft_lstsize(*stack_b) / 2) >= (*stack_a)->target->index)
 				ft_rb(stack_b);
 			else
 				ft_rrb(stack_b);
@@ -106,11 +107,7 @@ void	ft_sort(t_list **stack_a, t_list **stack_b)
 		ft_pb(stack_a, stack_b);
 	}
 	ft_sort_3num(stack_a);
-	while (ft_lstsize(*stack_b))
-	{
-		ft_pa(stack_a, stack_b);
-	}
-	ft_index(stack_a);
+	push_back(stack_a, stack_b);
 	while ((*stack_a)->index != _find_smollest_num(*stack_a))
 		ft_ra(stack_a);
 }
