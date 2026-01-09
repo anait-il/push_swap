@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sort.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abdelkabir <abdelkabir@student.42.fr>      +#+  +:+       +#+        */
+/*   By: anait-il <anait-il@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 18:20:38 by anait-il          #+#    #+#             */
-/*   Updated: 2026/01/09 01:34:31 by abdelkabir       ###   ########.fr       */
+/*   Updated: 2026/01/09 11:25:47 by anait-il         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,12 +98,46 @@ void	target_of_node(t_list **stack_a, t_list **stack_b)
 	}
 }
 
+void	push_foreward(t_list **stack_a, t_list **stack_b)
+{
+	t_list	*lst;
+
+	lst = smollest_cost(stack_a);
+	optimization(stack_a, stack_b, lst);
+	while ((*stack_a)->cost != lst->cost)
+	{
+		if ((ft_lstsize(*stack_a) / 2) >=  lst->index)
+			ft_ra(stack_a);
+		else
+			ft_rra(stack_a);
+	}
+	while ((*stack_b) != (*stack_a)->target)
+	{
+		if ((ft_lstsize(*stack_b) / 2) >= (*stack_a)->target->index)
+			ft_rb(stack_b);
+		else
+			ft_rrb(stack_b);
+	}
+	ft_pb(stack_a, stack_b);
+}
+
+void	optimization(t_list **stack_a, t_list **stack_b, t_list *best_cost)
+{
+	if ((ft_lstsize(*stack_a) - best_cost->index ) == (ft_lstsize(*stack_b) - best_cost->target->index))
+	{
+		while ((*stack_a)->cost != best_cost->cost)
+		{
+			if ((ft_lstsize(*stack_a) / 2) >=  best_cost->index)
+				ft_rr(stack_a, stack_b);
+			else
+				ft_rrr(stack_a, stack_b);
+		}
+	}
+}
+
 void	ft_sort(t_list **stack_a, t_list **stack_b)
 {
-	size_t	smoll_cost;
-	size_t	size;
 	t_list	*lst;
-	size_t	i;
 
 	ft_pb(stack_a, stack_b);
 	ft_pb(stack_a, stack_b);
@@ -115,36 +149,17 @@ void	ft_sort(t_list **stack_a, t_list **stack_b)
 		ft_index(stack_b);
 		target_of_node(stack_a, stack_b);
 		cost(stack_a, stack_b);
-		lst = smollest_cost(stack_a);
-		if ((ft_lstsize(*stack_a) - lst->index ) == (ft_lstsize(*stack_b) - lst->target->index))
-		{
-			while ((*stack_a)->cost != lst->cost)
-			{
-				if ((ft_lstsize(*stack_a) / 2) >=  lst->index)
-					ft_rr(stack_a, stack_b);
-				else
-					ft_rrr(stack_a, stack_b);
-			}
-		}
-		while ((*stack_a)->cost != lst->cost)
-		{
-			if ((ft_lstsize(*stack_a) / 2) >=  lst->index)
-				ft_ra(stack_a);
-			else
-				ft_rra(stack_a);
-		}
-		while ((*stack_b) != (*stack_a)->target)
-		{
-			if ((ft_lstsize(*stack_b) / 2) >= (*stack_a)->target->index)
-				ft_rb(stack_b);
-			else
-				ft_rrb(stack_b);
-		}
-		ft_pb(stack_a, stack_b);
+		push_foreward(stack_a, stack_b);
 	}
 	ft_sort_3num(stack_a);
 	push_back(stack_a, stack_b);
 	ft_index(stack_a);
-	while ((*stack_a)->index != _find_smollest_num(*stack_a))
-		ft_ra(stack_a);
+	lst = _find_smollest_num(*stack_a);
+	while (((*stack_a)->index) != lst->index)
+	{
+		if ((ft_lstsize(*stack_a) / 2) >= lst->index)
+			ft_ra(stack_a);
+		else
+			ft_rra(stack_a);
+	}
 }

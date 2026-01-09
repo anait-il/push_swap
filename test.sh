@@ -1,11 +1,11 @@
 #!/bin/bash
 
 PUSH_SWAP=./push_swap
-CHECKER=./checker_linux   # or ./checker_Mac
+CHECKER=./checker_Mac   # or ./checker_Mac
 GEN=./gen.py
 
 TESTS=50
-COUNT=500
+COUNT=100
 MAX=500
 
 for ((i=1; i<=TESTS; i++)); do
