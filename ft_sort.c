@@ -6,7 +6,7 @@
 /*   By: anait-il <anait-il@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 18:20:38 by anait-il          #+#    #+#             */
-/*   Updated: 2026/01/09 11:25:47 by anait-il         ###   ########.fr       */
+/*   Updated: 2026/01/09 12:14:53 by anait-il         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ void	target_of_node(t_list **stack_a, t_list **stack_b)
 	{
 		target = smollest_targ(lst, *stack_b);
 		if (target == NULL)
-			lst->target = large_targe(lst, *stack_b);
+			lst->target = biggest_num(*stack_b);
 		else
 			lst->target = target;
 		lst = lst->next;

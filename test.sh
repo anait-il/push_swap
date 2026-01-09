@@ -4,7 +4,7 @@ PUSH_SWAP=./push_swap
 CHECKER=./checker_Mac   # or ./checker_Mac
 GEN=./gen.py
 
-TESTS=50
+TESTS=500
 COUNT=100
 MAX=500
 
