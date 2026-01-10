@@ -1,0 +1,36 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_free.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: anait-il <anait-il@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/01/10 15:32:06 by anait-il          #+#    #+#             */
+/*   Updated: 2026/01/10 16:17:09 by anait-il         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "push_swap.h"
+
+void	free_split(char **p, long j)
+{
+	while(--j)
+		free(p[j]);
+	free(p);
+}
+
+void	free_list(t_list **stack_a)
+{
+	t_list	*node;
+
+	if (!*stack_a)
+		return ;
+	node = *stack_a;
+	while (*stack_a)
+	{
+		node = (*stack_a)->next;
+		free(*stack_a);
+		*stack_a = node;
+	}
+	ft_error();
+}

@@ -6,7 +6,7 @@
 /*   By: anait-il <anait-il@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 18:08:38 by anait-il          #+#    #+#             */
-/*   Updated: 2026/01/10 12:06:48 by anait-il         ###   ########.fr       */
+/*   Updated: 2026/01/10 16:00:54 by anait-il         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,10 +69,14 @@ t_list	*smollest_targ(t_list *lst, t_list *node);
 t_list	*biggest_num(t_list *stack_a);
 void	target_of_node(t_list **stack_a, t_list **stack_b);
 void	reverse_targ(t_list **stack_a, t_list **stack_b);
+int	cost_by_rotat(t_list **stack_a, t_list **stack_b, t_list *lst);
 t_list	*big_targ(t_list *lst, t_list *node);
 t_list	*small(t_list *stack_a);
 void	push_back(t_list **stack_a, t_list **stack_b);
 void	push_foreward(t_list **stack_a, t_list **stack_b);
 void	optimization(t_list **stack_a, t_list **stack_b, t_list *best_cost);
+//free
+void	free_list(t_list **stack_a);
+void	free_split(char **p, long j);
 
 #endif
