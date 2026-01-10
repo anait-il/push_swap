@@ -6,7 +6,7 @@
 /*   By: anait-il <anait-il@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 18:08:38 by anait-il          #+#    #+#             */
-/*   Updated: 2026/01/09 11:32:11 by anait-il         ###   ########.fr       */
+/*   Updated: 2026/01/10 12:06:48 by anait-il         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ int	_checking(char **av, int ac);
 void	check_space(char *av);
 int	check_sign(char *av, int i);
 int	check_duplicate(t_list *last, int content);
+int	is_sorted(t_list *head);
 //operations
 void	ft_pa(t_list **stack_a, t_list **stack_b);
 void	ft_pb(t_list **stack_a, t_list **stack_b);

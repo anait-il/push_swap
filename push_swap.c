@@ -6,11 +6,24 @@
 /*   By: anait-il <anait-il@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/02 10:21:16 by anait-il          #+#    #+#             */
-/*   Updated: 2026/01/09 11:01:57 by anait-il         ###   ########.fr       */
+/*   Updated: 2026/01/10 12:07:59 by anait-il         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	is_sorted(t_list *head)
+{
+	if (!head)
+		return 1;
+	while (head->next)
+	{
+		if (head->content > head->next->content)
+			return 0;
+		head = head->next;
+	}
+	return 1;
+}
 
 void	ft_index(t_list **stack_a)
 {
@@ -65,6 +78,8 @@ int main(int ac, char **av)
 	if (!_checking(av, ac))
 		return (write(2, "Error\n", 6));
 	fil_stack(&stack_a, av, ac);
+	if (is_sorted(stack_a))
+		return (0);
 	ft_index(&stack_a);
 	if (ac == 2)
 		return (0);
