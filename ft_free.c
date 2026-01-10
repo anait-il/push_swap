@@ -14,8 +14,11 @@
 
 void	free_split(char **p, long j)
 {
-	while(--j)
-		free(p[j]);
+	int i;
+
+	i = 0;
+	while(i < j)
+		free(p[i++]);
 	free(p);
 }
 
@@ -32,5 +35,4 @@ void	free_list(t_list **stack_a)
 		free(*stack_a);
 		*stack_a = node;
 	}
-	ft_error();
 }

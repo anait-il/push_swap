@@ -71,14 +71,8 @@ void	fil_stack(t_list **stack_a, char **av, int ac)
 	}
 }
 
-void f()
-{
-	system("leaks push_swap");
-}
-
 int main(int ac, char **av)
 {
-	atexit(f);
 	t_list	*stack_a;
 	t_list	*stack_b;
 
@@ -102,5 +96,13 @@ int main(int ac, char **av)
 		ft_sort_four_and_five(&stack_a, &stack_b);
 	else
 		ft_sort(&stack_a, &stack_b);
+	t_list *node = stack_a;
+	while (stack_a)
+	{
+		node = stack_a->next;
+		free(stack_a);
+		stack_a = node;
+	}
+	// free(stack_a);
 	return (0);
 }
