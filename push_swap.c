@@ -6,7 +6,7 @@
 /*   By: anait-il <anait-il@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/02 10:21:16 by anait-il          #+#    #+#             */
-/*   Updated: 2026/01/10 16:14:32 by anait-il         ###   ########.fr       */
+/*   Updated: 2026/01/11 13:23:42 by anait-il         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,39 +40,57 @@ void	ft_index(t_list **stack_a)
 	}
 }
 
+void	create_node(t_list **stack_a, char **p)
+{
+	int		content;
+	size_t	j;
+	t_list	*node;
+	
+	j = 0;
+	while (p[j])
+	{
+		content = ft_atoi(p[j]);
+		if (check_duplicate(*stack_a, content))
+			ft_error();
+		node = ft_lstnew(content);
+		if (!node)
+		{
+			free_split(p);
+			free_list_exit(stack_a);
+		}
+		ft_lstadd_back(stack_a, node);
+		j++;
+	}
+}
+
 void	fil_stack(t_list **stack_a, char **av, int ac)
 {
 	int		i;
 	long	j;
 	char	**p;
 	t_list	*node;
-	int		content;
+	int content;
 
 	i = 1;
 	while (i < ac)
 	{
-		j = 0;
 		p = ft_split(av[i], ' ');
 		if (!p)
 			ft_error();
-		while (p[j])
-		{
-			content = ft_atoi(p[j]);
-			if (check_duplicate(*stack_a, content))
-				ft_error();
-			node = ft_lstnew(content);
-			if (!node)
-				free_list(stack_a);
-			ft_lstadd_back(stack_a, node);
-			j++;
-		}
-		free_split(p, j);
+		create_node(stack_a, p);
+		free_split(p);
 		i++;
 	}
 }
 
-int main(int ac, char **av)
+void f()
 {
+	system ("leaks push_swap");
+}
+
+int	main(int ac, char **av)
+{
+	atexit(f);
 	t_list	*stack_a;
 	t_list	*stack_b;
 
@@ -86,23 +104,16 @@ int main(int ac, char **av)
 	if (is_sorted(stack_a))
 		return (free_list(&stack_a), 0);
 	ft_index(&stack_a);
-	if (ac == 2)
-		return (0);
-	else if (ac == 3)
+	if (ft_lstsize(stack_a) == 1)
+		return (free_list(&stack_a), 0);
+	else if (ft_lstsize(stack_a) == 2)
 		ft_sort_2(&stack_a);
-	else if (ac == 4)
+	else if (ft_lstsize(stack_a) == 3)
 		ft_sort_3num(&stack_a);
-	else if (ac == 6 || ac == 5)
+	else if (ft_lstsize(stack_a) == 5 || ft_lstsize(stack_a) == 4)
 		ft_sort_four_and_five(&stack_a, &stack_b);
 	else
 		ft_sort(&stack_a, &stack_b);
-	t_list *node = stack_a;
-	while (stack_a)
-	{
-		node = stack_a->next;
-		free(stack_a);
-		stack_a = node;
-	}
-	// free(stack_a);
+	free_list(&stack_a);
 	return (0);
 }

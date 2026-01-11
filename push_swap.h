@@ -6,7 +6,7 @@
 /*   By: anait-il <anait-il@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 18:08:38 by anait-il          #+#    #+#             */
-/*   Updated: 2026/01/10 16:00:54 by anait-il         ###   ########.fr       */
+/*   Updated: 2026/01/11 13:24:07 by anait-il         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,7 @@ void	push_foreward(t_list **stack_a, t_list **stack_b);
 void	optimization(t_list **stack_a, t_list **stack_b, t_list *best_cost);
 //free
 void	free_list(t_list **stack_a);
-void	free_split(char **p, long j);
+void	free_split(char **p);
+void	free_list_exit(t_list **stack_a);
 
 #endif
