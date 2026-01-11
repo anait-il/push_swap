@@ -6,18 +6,18 @@
 /*   By: anait-il <anait-il@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 18:08:38 by anait-il          #+#    #+#             */
-/*   Updated: 2026/01/11 13:24:07 by anait-il         ###   ########.fr       */
+/*   Updated: 2026/01/11 16:03:21 by anait-il         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-#include <unistd.h>
-#include <stdlib.h>
-#include <stdio.h>
+# include <unistd.h>
+# include <stdlib.h>
+# include <stdio.h>
 
-typedef struct			s_list
+typedef struct s_list
 {
 	size_t				cost;
 	struct s_list		*target;
@@ -34,14 +34,15 @@ size_t	ft_lstsize(t_list *lst);
 t_list	*ft_lstlast(t_list *lst);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 t_list	*ft_lstnew(int content);
-int	ft_atoi(const char *str);
+int		ft_atoi(const char *str);
 //parcing
 void	ft_error(void);
-int	_checking(char **av, int ac);
+void	not_digit(char **av, int ac, int i);
+int		_checking(char **av, int ac);
 void	check_space(char *av);
-int	check_sign(char *av, int i);
-int	check_duplicate(t_list *last, int content);
-int	is_sorted(t_list *head);
+int		check_sign(char *av, int i);
+int		check_duplicate(t_list *last, int content);
+int		is_sorted(t_list *head);
 //operations
 void	ft_pa(t_list **stack_a, t_list **stack_b);
 void	ft_pb(t_list **stack_a, t_list **stack_b);
@@ -69,7 +70,7 @@ t_list	*smollest_targ(t_list *lst, t_list *node);
 t_list	*biggest_num(t_list *stack_a);
 void	target_of_node(t_list **stack_a, t_list **stack_b);
 void	reverse_targ(t_list **stack_a, t_list **stack_b);
-int	cost_by_rotat(t_list **stack_a, t_list **stack_b, t_list *lst);
+int		cost_by_rotat(t_list **stack_a, t_list **stack_b, t_list *lst);
 t_list	*big_targ(t_list *lst, t_list *node);
 t_list	*small(t_list *stack_a);
 void	push_back(t_list **stack_a, t_list **stack_b);

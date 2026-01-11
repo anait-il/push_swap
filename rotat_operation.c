@@ -6,7 +6,7 @@
 /*   By: anait-il <anait-il@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 18:08:59 by anait-il          #+#    #+#             */
-/*   Updated: 2026/01/05 18:09:01 by anait-il         ###   ########.fr       */
+/*   Updated: 2026/01/11 16:04:48 by anait-il         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ void	rotate_list(t_list **head)
 
 	lst = *head;
 	if (!head || !*head)
-		return;
+		return ;
 	if (ft_lstsize(*head) == 1)
-		return;
+		return ;
 	*head = lst->next;
 	last_node = ft_lstlast(lst);
 	last_node->next = lst;

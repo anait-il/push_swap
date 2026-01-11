@@ -6,7 +6,7 @@
 /*   By: anait-il <anait-il@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 18:08:25 by anait-il          #+#    #+#             */
-/*   Updated: 2026/01/05 20:23:07 by anait-il         ###   ########.fr       */
+/*   Updated: 2026/01/11 16:00:36 by anait-il         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	push_list(t_list **dest, t_list **src)
 	t_list	*lst;
 
 	if (!src || !*src)
-		return;
+		return ;
 	lst = *dest;
 	*dest = *src;
 	*src = (*src)->next;

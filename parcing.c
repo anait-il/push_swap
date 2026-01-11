@@ -6,7 +6,7 @@
 /*   By: anait-il <anait-il@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/02 19:40:45 by anait-il          #+#    #+#             */
-/*   Updated: 2026/01/11 11:39:16 by anait-il         ###   ########.fr       */
+/*   Updated: 2026/01/11 15:53:18 by anait-il         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,30 @@ void	check_space(char *av)
 	ft_error();
 }
 
-int	_checking(char **av, int ac)	
+void	not_digit(char **av, int ac, int i)
+{
+	int	j;
+
+	j = 0;
+	while (av[i][j])
+	{
+		if (av[i][j] == '+' || av[i][j] == '-')
+		{
+			if (!check_sign(av[i], j + 1))
+				ft_error();
+			j++;
+		}
+		if ((av[i][j] < '0' || av[i][j] > '9'
+			|| av[i][j] == 9) && av[i][j] != ' ')
+			ft_error();
+		if ((av[i][j] >= '0' && av[i][j] <= '9')
+			&& (av[i][j + 1] == '+' || av[i][j + 1] == '-'))
+			ft_error();
+		j++;
+	}
+}
+
+int	_checking(char **av, int ac)
 {
 	int	i;
 	int	j;
@@ -43,21 +66,8 @@ int	_checking(char **av, int ac)
 	while (i < ac)
 	{
 		j = 0;
-		while (av[i][j])
-		{
-			if (av[i][j] == '+' || av[i][j] == '-')
-			{
-				if (!check_sign(av[i], j + 1))
-					return (0);
-				j++;
-			}
-			if ((av[i][j] < '0' || av[i][j] > '9' || av[i][j] == 9) && av[i][j] != ' ')
-				return (0);
-			if (av[i][j] >= '0' && av[i][j] <= '9' && (av[i][j+1] == '+' || av[i][j + 1] == '-'))
-				ft_error();
-			j++;
-		}
-		check_space(av[i]); 
+		not_digit(av, ac, i);
+		check_space(av[i]);
 		i++;
 	}
 	return (1);
@@ -73,4 +83,3 @@ int	check_duplicate(t_list *last, int content)
 	}
 	return (0);
 }
-

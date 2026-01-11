@@ -6,7 +6,7 @@
 /*   By: anait-il <anait-il@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 18:20:38 by anait-il          #+#    #+#             */
-/*   Updated: 2026/01/10 15:26:51 by anait-il         ###   ########.fr       */
+/*   Updated: 2026/01/11 15:58:16 by anait-il         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	push_foreward(t_list **stack_a, t_list **stack_b)
 	optimization(stack_a, stack_b, lst);
 	while ((*stack_a) != lst)
 	{
-		if ((ft_lstsize(*stack_a) / 2) >=  lst->index)
+		if ((ft_lstsize(*stack_a) / 2) >= lst->index)
 			ft_ra(stack_a);
 		else
 			ft_rra(stack_a);
@@ -37,11 +37,12 @@ void	push_foreward(t_list **stack_a, t_list **stack_b)
 
 void	optimization(t_list **stack_a, t_list **stack_b, t_list *lst)
 {
-	if ((ft_lstsize(*stack_a) - lst->index ) == (ft_lstsize(*stack_b) - lst->target->index))
+	if ((ft_lstsize(*stack_a) - lst->index)
+		== (ft_lstsize(*stack_b) - lst->target->index))
 	{
 		while ((*stack_a != lst) && (*stack_b != lst->target))
 		{
-			if ((ft_lstsize(*stack_a) / 2) >=  lst->index)
+			if ((ft_lstsize(*stack_a) / 2) >= lst->index)
 				ft_rr(stack_a, stack_b);
 			else
 				ft_rrr(stack_a, stack_b);
@@ -49,12 +50,14 @@ void	optimization(t_list **stack_a, t_list **stack_b, t_list *lst)
 	}
 	while (((*stack_a) != lst) && ((*stack_b) != lst->target))
 	{
-		if (((ft_lstsize(*stack_a) / 2) >=  lst->index) && ((ft_lstsize(*stack_b) / 2) >= lst->target->index))
+		if (((ft_lstsize(*stack_a) / 2) >= lst->index)
+			&& ((ft_lstsize(*stack_b) / 2) >= lst->target->index))
 			ft_rr(stack_a, stack_b);
-		else if (((ft_lstsize(*stack_a) / 2) <  lst->index) && ((ft_lstsize(*stack_b) / 2) < lst->target->index))
+		else if (((ft_lstsize(*stack_a) / 2) < lst->index)
+			&& ((ft_lstsize(*stack_b) / 2) < lst->target->index))
 			ft_rrr(stack_a, stack_b);
 		else
-			break;
+			break ;
 	}
 }
 

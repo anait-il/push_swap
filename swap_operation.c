@@ -6,7 +6,7 @@
 /*   By: anait-il <anait-il@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 18:09:43 by anait-il          #+#    #+#             */
-/*   Updated: 2026/01/05 18:09:46 by anait-il         ###   ########.fr       */
+/*   Updated: 2026/01/11 16:07:15 by anait-il         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,17 @@
 void	ft_swap_list(t_list **head)
 {
 	t_list	*lst;
+
 	if (!head || !*head)
-		return;
+		return ;
 	if (ft_lstsize(*head) == 1)
-		return;
+		return ;
 	lst = *head;
 	*head = lst->next;
 	lst->next = (*head)->next;
 	(*head)->next = lst;
 }
+
 void	ft_sa(t_list **stack_a)
 {
 	ft_swap_list(stack_a);

@@ -6,7 +6,7 @@
 /*   By: anait-il <anait-il@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/07 16:28:06 by anait-il          #+#    #+#             */
-/*   Updated: 2026/01/08 01:38:25 by anait-il         ###   ########.fr       */
+/*   Updated: 2026/01/11 16:06:57 by anait-il         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ void	push_back(t_list **stack_a, t_list **stack_b)
 		reverse_targ(stack_a, stack_b);
 		while (*stack_a != (*stack_b)->target)
 		{
-			if ((ft_lstsize(*stack_a) / 2) >=  (*stack_b)->target->index)
+			if ((ft_lstsize(*stack_a) / 2) >= (*stack_b)->target->index)
 				ft_ra(stack_a);
 			else
 				ft_rra(stack_a);

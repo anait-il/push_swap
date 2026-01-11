@@ -6,7 +6,7 @@
 /*   By: anait-il <anait-il@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/10 15:32:06 by anait-il          #+#    #+#             */
-/*   Updated: 2026/01/11 13:18:12 by anait-il         ###   ########.fr       */
+/*   Updated: 2026/01/11 15:55:09 by anait-il         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 void	free_split(char **p)
 {
-	int i;
+	int	i;
 
 	i = 0;
-	while(p[i])
+	while (p[i])
 		free(p[i++]);
 	free(p);
 }

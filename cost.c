@@ -6,7 +6,7 @@
 /*   By: anait-il <anait-il@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 22:10:30 by anait-il          #+#    #+#             */
-/*   Updated: 2026/01/10 15:20:23 by anait-il         ###   ########.fr       */
+/*   Updated: 2026/01/11 15:54:04 by anait-il         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,28 @@
 
 int	cost_by_rotat(t_list **stack_a, t_list **stack_b, t_list *lst)
 {
-	size_t	a_cost;
-	size_t	b_cost;
+	size_t	costs[2];
 
-	if ((lst->index <= ft_lstsize(*stack_a) / 2) && (lst->target->index <= ft_lstsize(*stack_b) / 2))
-		{
-			a_cost = lst->index;
-			b_cost = lst->target->index;
-			if (a_cost > b_cost)
-				lst->cost = a_cost;
-			else
-				lst->cost = b_cost;
-		}
-	else if ((lst->index > ft_lstsize(*stack_a) / 2) && (lst->target->index > ft_lstsize(*stack_b) / 2))
-		{
-			a_cost = ft_lstsize(*stack_a) - lst->index;
-			b_cost = ft_lstsize(*stack_b) - lst->target->index;
-			if (a_cost > b_cost)
-				lst->cost = a_cost;
-			else
-				lst->cost = b_cost;
-		}
+	if ((lst->index <= ft_lstsize(*stack_a) / 2)
+		&& (lst->target->index <= ft_lstsize(*stack_b) / 2))
+	{
+		costs[0] = lst->index;
+		costs[1] = lst->target->index;
+		if (costs[0] > costs[1])
+			lst->cost = costs[0];
+		else
+			lst->cost = costs[1];
+	}
+	else if ((lst->index > ft_lstsize(*stack_a) / 2)
+		&& (lst->target->index > ft_lstsize(*stack_b) / 2))
+	{
+		costs[0] = ft_lstsize(*stack_a) - lst->index;
+		costs[1] = ft_lstsize(*stack_b) - lst->target->index;
+		if (costs[0] > costs[1])
+			lst->cost = costs[0];
+		else
+			lst->cost = costs[1];
+	}
 	else
 		return (0);
 	return (1);
