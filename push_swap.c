@@ -51,7 +51,10 @@ static void	create_node(t_list **stack_a, char **p)
 	{
 		content = ft_atoi(p[j]);
 		if (check_duplicate(*stack_a, content))
-			ft_error();
+		{
+			free_split(p);
+			free_list_exit(stack_a);	
+		}
 		node = ft_lstnew(content);
 		if (!node)
 		{
@@ -76,7 +79,10 @@ void	fil_stack(t_list **stack_a, char **av, int ac)
 	{
 		p = ft_split(av[i], ' ');
 		if (!p)
+		{
+			free_list(stack_a);
 			ft_error();
+		}
 		create_node(stack_a, p);
 		free_split(p);
 		i++;

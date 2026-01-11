@@ -1,4 +1,4 @@
-NAME = push_swap
+NAME = push_swap.a
 
 CC = cc
 
@@ -12,10 +12,10 @@ all : $(NAME)
 
 $(NAME) : $(OBJ)
 	ar rc $(NAME) $(OBJ)
-	cc $(NAME) -o push_swap
+	cc -g $(NAME) -o push_swap
 
 %.o : %.c push_swap.h
-	$(CC)  -c $< -o $@
+	$(CC) -c $< -o $@
 
 clean :
 	rm -f $(OBJ)

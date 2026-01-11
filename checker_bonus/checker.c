@@ -60,6 +60,7 @@ int main(int ac, char **av)
 {
 	t_list	*stack_a;
 	t_list	*stack_b;
+	char	*file;
 
 	stack_a = NULL;
 	stack_b = NULL;
@@ -68,8 +69,8 @@ int main(int ac, char **av)
 	if (!_checking(av, ac))
 		return (write(2, "Error\n", 6));
 	fil_stack(&stack_a, av, ac);
-	while (get_next_line(0))
+	while (file = get_next_line(0))
 	{
-		
+		file = ft_strjoin()
 	}
 }
