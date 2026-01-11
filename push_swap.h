@@ -6,7 +6,7 @@
 /*   By: anait-il <anait-il@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 18:08:38 by anait-il          #+#    #+#             */
-/*   Updated: 2026/01/11 16:03:21 by anait-il         ###   ########.fr       */
+/*   Updated: 2026/01/11 18:25:38 by anait-il         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ typedef struct s_list
 }						t_list;
 
 //libft
-size_t	ft_strlcpy(char *dst, const char *src, size_t len);
 char	**ft_split(char const *s, char c);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 size_t	ft_lstsize(t_list *lst);
