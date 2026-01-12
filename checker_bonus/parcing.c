@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: anait-il <anait-il@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/02 19:40:45 by anait-il          #+#    #+#             */
-/*   Updated: 2026/01/11 18:17:44 by anait-il         ###   ########.fr       */
+/*   Created: 2026/01/12 11:26:31 by anait-il          #+#    #+#             */
+/*   Updated: 2026/01/12 11:26:36 by anait-il         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker.h"
 
 int	check_sign(char *av, int i)
 {

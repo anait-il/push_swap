@@ -5,12 +5,13 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: anait-il <anait-il@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/16 20:06:44 by anait-il          #+#    #+#             */
-/*   Updated: 2025/12/19 21:35:58 by anait-il         ###   ########.fr       */
+/*   Created: 2026/01/12 11:27:00 by anait-il          #+#    #+#             */
+/*   Updated: 2026/01/12 11:27:19 by anait-il         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+#include "checker.h"
 
 static char	*_rest_of_the_line(char *stat)
 {

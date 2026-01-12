@@ -6,11 +6,11 @@
 /*   By: anait-il <anait-il@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/02 10:21:58 by anait-il          #+#    #+#             */
-/*   Updated: 2026/01/02 19:54:10 by anait-il         ###   ########.fr       */
+/*   Updated: 2026/01/12 11:28:13 by anait-il         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker.h"
 
 int	ft_atoi(const char *str)
 {

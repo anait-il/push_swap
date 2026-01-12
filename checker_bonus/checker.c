@@ -6,7 +6,7 @@
 /*   By: anait-il <anait-il@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/11 16:21:38 by anait-il          #+#    #+#             */
-/*   Updated: 2026/01/11 18:47:03 by anait-il         ###   ########.fr       */
+/*   Updated: 2026/01/12 18:39:14 by anait-il         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,21 +56,104 @@ void	fil_stack(t_list **stack_a, char **av, int ac)
 	}
 }
 
-int main(int ac, char **av)
+void	checker_program(t_list **stack_a, t_list **stack_b, char *file)
+{
+	int		i;
+	char	**p;
+
+	i = 0;
+	p = ft_split(file, '\n');
+	while (p[i])
+	{
+		if (!ft_strncmp(p[i], "sa"))
+			ft_sa(stack_a);
+		else if (!ft_strncmp(p[i], "sb"))
+			ft_sb(stack_b);
+		else if (!ft_strncmp(p[i], "ss"))
+			ft_ss(stack_a, stack_b);
+		else if (!ft_strncmp(p[i], "pa"))
+			ft_pa(stack_a, stack_b);
+		else if (!ft_strncmp(p[i], "pb"))
+			ft_pb(stack_a, stack_b);
+		else if (!ft_strncmp(p[i], "ra"))
+			ft_ra(stack_a);
+		else if (!ft_strncmp(p[i], "rb"))
+			ft_rb(stack_b);
+		else if (!ft_strncmp(p[i], "rr"))
+			ft_rr(stack_a, stack_b);
+		else if (!ft_strncmp(p[i], "rra"))
+			ft_rra(stack_a);
+		else if (!ft_strncmp(p[i], "rrb"))
+			ft_rrb(stack_b);
+		else if (!ft_strncmp(p[i], "rrr"))
+			ft_rrr(stack_a, stack_b);
+		else
+		{
+			free_split(p);
+			free_list(stack_a);
+			free_list(stack_b);
+			ft_error();
+		}
+		i++;
+	}
+	free_split(p);
+}
+
+void	ko_or_ok(t_list **stack_a, t_list **stack_b)
+{
+	if (ft_lstsize(*stack_b) != 0)
+	{
+		write(1, "KO", 2);
+		free_list(stack_a);
+	}
+	else
+	{
+		if (is_sorted(*stack_a))
+		{
+			write(1, "KO", 2);
+			free_list(stack_a);
+			exit(0);
+		}
+		else
+		{
+			write(1, "OK", 2);
+			free_list(stack_a);
+			exit(0);
+		}
+	}
+}
+
+int	main(int ac, char **av)
 {
 	t_list	*stack_a;
 	t_list	*stack_b;
 	char	*file;
+	char	*tmp;
 
 	stack_a = NULL;
 	stack_b = NULL;
+	file = NULL;
 	if (ac == 1)
 		return (0);
 	if (!_checking(av, ac))
 		return (write(2, "Error\n", 6));
 	fil_stack(&stack_a, av, ac);
-	while (file = get_next_line(0))
+	tmp = get_next_line(0);
+	while (tmp)
 	{
-		file = ft_strjoin()
+		printf("helo\n");
+		parcing_new_line(tmp, &stack_a);
+		check_wrong_instruction(tmp, &stack_a);
+		file = ft_strjoin(file, tmp);
+		free(tmp);
+		tmp = get_next_line(0);
 	}
+	printf("test");
+	if (ft_lstsize(stack_a) == 1)
+		exit_with_ok();
+	if (!tmp)
+		
+	checker_program(&stack_a, &stack_b, file);
+	free(file);
+	ko_or_ok(&stack_a, &stack_b);
 }

@@ -1,38 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_error.c                                         :+:      :+:    :+:   */
+/*   push_operation.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anait-il <anait-il@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/11 18:22:38 by anait-il          #+#    #+#             */
-/*   Updated: 2026/01/12 13:26:32 by anait-il         ###   ########.fr       */
+/*   Created: 2026/01/05 18:08:25 by anait-il          #+#    #+#             */
+/*   Updated: 2026/01/12 13:46:47 by anait-il         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-void	ft_error(void)
+void	push_list(t_list **dest, t_list **src)
 {
-	write(2, "Error\n", 6);
-	exit(1);
+	t_list	*lst;
+
+	if (!src || !*src)
+		return ;
+	lst = *dest;
+	*dest = *src;
+	*src = (*src)->next;
+	(*dest)->next = lst;
 }
 
-int	is_sorted(t_list *head)
+void	ft_pa(t_list **stack_a, t_list **stack_b)
 {
-	if (!head)
-		return (1);
-	while (head->next)
-	{
-		if (head->content > head->next->content)
-			return (1);
-		head = head->next;
-	}
-	return (0);
+	push_list(stack_a, stack_b);
 }
 
-void	exit_with_ok()
+void	ft_pb(t_list **stack_a, t_list **stack_b)
 {
-	write(1, "OK", 2);
-	exit(0);
+	push_list(stack_b, stack_a);
 }

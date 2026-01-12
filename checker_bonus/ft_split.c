@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: anait-il <anait-il@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/02 10:21:45 by anait-il          #+#    #+#             */
-/*   Updated: 2026/01/11 18:26:01 by anait-il         ###   ########.fr       */
+/*   Created: 2026/01/12 11:27:32 by anait-il          #+#    #+#             */
+/*   Updated: 2026/01/12 11:27:44 by anait-il         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker.h"
 
 static size_t	ft_strlcpy(char *dst, const char *src, size_t len)
 {

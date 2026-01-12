@@ -6,11 +6,11 @@
 /*   By: anait-il <anait-il@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/10 15:32:06 by anait-il          #+#    #+#             */
-/*   Updated: 2026/01/11 15:55:09 by anait-il         ###   ########.fr       */
+/*   Updated: 2026/01/12 15:53:41 by anait-il         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker.h"
 
 void	free_split(char **p)
 {
@@ -42,7 +42,7 @@ void	free_list_exit(t_list **stack_a)
 	t_list	*node;
 
 	if (!*stack_a)
-		return ;
+		exit(1);
 	node = *stack_a;
 	while (*stack_a)
 	{

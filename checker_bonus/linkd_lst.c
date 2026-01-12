@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: anait-il <anait-il@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/02 10:21:27 by anait-il          #+#    #+#             */
-/*   Updated: 2026/01/11 11:15:31 by anait-il         ###   ########.fr       */
+/*   Created: 2026/01/12 11:26:16 by anait-il          #+#    #+#             */
+/*   Updated: 2026/01/12 11:26:20 by anait-il         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker.h"
 
 size_t	ft_lstsize(t_list *lst)
 {

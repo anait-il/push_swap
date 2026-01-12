@@ -1,38 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_error.c                                         :+:      :+:    :+:   */
+/*   swap_operation.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anait-il <anait-il@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/11 18:22:38 by anait-il          #+#    #+#             */
-/*   Updated: 2026/01/12 13:26:32 by anait-il         ###   ########.fr       */
+/*   Created: 2026/01/05 18:09:43 by anait-il          #+#    #+#             */
+/*   Updated: 2026/01/12 13:45:09 by anait-il         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-void	ft_error(void)
+void	ft_swap_list(t_list **head)
 {
-	write(2, "Error\n", 6);
-	exit(1);
+	t_list	*lst;
+
+	if (!head || !*head)
+		return ;
+	if (ft_lstsize(*head) == 1)
+		return ;
+	lst = *head;
+	*head = lst->next;
+	lst->next = (*head)->next;
+	(*head)->next = lst;
 }
 
-int	is_sorted(t_list *head)
+void	ft_sa(t_list **stack_a)
 {
-	if (!head)
-		return (1);
-	while (head->next)
-	{
-		if (head->content > head->next->content)
-			return (1);
-		head = head->next;
-	}
-	return (0);
+	ft_swap_list(stack_a);
 }
 
-void	exit_with_ok()
+void	ft_sb(t_list **stack_b)
 {
-	write(1, "OK", 2);
-	exit(0);
+	ft_swap_list(stack_b);
+}
+
+void	ft_ss(t_list **stack_a, t_list **stack_b)
+{
+	ft_swap_list(stack_a);
+	ft_swap_list(stack_b);
 }
