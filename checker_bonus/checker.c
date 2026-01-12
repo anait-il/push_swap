@@ -6,7 +6,7 @@
 /*   By: anait-il <anait-il@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/11 16:21:38 by anait-il          #+#    #+#             */
-/*   Updated: 2026/01/12 18:39:14 by anait-il         ###   ########.fr       */
+/*   Updated: 2026/01/12 19:46:08 by anait-il         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -141,19 +141,13 @@ int	main(int ac, char **av)
 	tmp = get_next_line(0);
 	while (tmp)
 	{
-		printf("helo\n");
 		parcing_new_line(tmp, &stack_a);
 		check_wrong_instruction(tmp, &stack_a);
 		file = ft_strjoin(file, tmp);
 		free(tmp);
 		tmp = get_next_line(0);
 	}
-	printf("test");
-	if (ft_lstsize(stack_a) == 1)
-		exit_with_ok();
-	if (!tmp)
-		
-	checker_program(&stack_a, &stack_b, file);
-	free(file);
+	if (file)
+		checker_program(&stack_a, &stack_b, file);
 	ko_or_ok(&stack_a, &stack_b);
 }
