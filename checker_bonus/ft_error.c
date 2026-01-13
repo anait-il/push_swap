@@ -6,7 +6,7 @@
 /*   By: anait-il <anait-il@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/11 18:22:38 by anait-il          #+#    #+#             */
-/*   Updated: 2026/01/12 13:26:32 by anait-il         ###   ########.fr       */
+/*   Updated: 2026/01/13 09:04:29 by anait-il         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	is_sorted(t_list *head)
 	return (0);
 }
 
-void	exit_with_ok()
+void	exit_with_ok(void)
 {
 	write(1, "OK", 2);
 	exit(0);
