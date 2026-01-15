@@ -6,7 +6,7 @@
 /*   By: anait-il <anait-il@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 11:26:47 by anait-il          #+#    #+#             */
-/*   Updated: 2026/01/12 11:26:55 by anait-il         ###   ########.fr       */
+/*   Updated: 2026/01/15 21:27:21 by anait-il         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <stdlib.h>
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE	10
+#  define BUFFER_SIZE	10 
 # endif
 
 char	*ft_strchr(const char *str, int c);

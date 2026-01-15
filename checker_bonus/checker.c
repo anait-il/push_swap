@@ -6,12 +6,11 @@
 /*   By: anait-il <anait-il@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/11 16:21:38 by anait-il          #+#    #+#             */
-/*   Updated: 2026/01/15 15:50:52 by anait-il         ###   ########.fr       */
+/*   Updated: 2026/01/15 21:26:34 by anait-il         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
-#include "get_next_line.h"
 
 static void	create_node(t_list **stack_a, char **p)
 {

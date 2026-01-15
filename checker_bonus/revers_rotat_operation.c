@@ -6,7 +6,7 @@
 /*   By: anait-il <anait-il@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 18:08:52 by anait-il          #+#    #+#             */
-/*   Updated: 2026/01/12 13:44:39 by anait-il         ###   ########.fr       */
+/*   Updated: 2026/01/15 17:06:41 by anait-il         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	revers_rotat_list(t_list **head)
 	t_list	*lst;
 	t_list	*tmp;
 
-	if (!head || !*head)
+	if (!head || !*head || !(*head)->next)
 		return ;
 	lst = *head;
 	tmp = *head;
