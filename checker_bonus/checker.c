@@ -6,7 +6,7 @@
 /*   By: anait-il <anait-il@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/11 16:21:38 by anait-il          #+#    #+#             */
-/*   Updated: 2026/01/13 09:00:37 by anait-il         ###   ########.fr       */
+/*   Updated: 2026/01/15 15:50:52 by anait-il         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,11 @@ static void	create_node(t_list **stack_a, char **p)
 	{
 		content = ft_atoi(p[j]);
 		if (check_duplicate(*stack_a, content))
+		{
+			free_split(p);
+			free_list(stack_a);
 			ft_error();
+		}
 		node = ft_lstnew(content);
 		if (!node)
 		{
@@ -49,21 +53,18 @@ void	fil_stack(t_list **stack_a, char **av, int ac)
 	{
 		p = ft_split(av[i], ' ');
 		if (!p)
-			ft_error();
+		{
+			free_list(stack_a);
+			exit(1);
+		}
 		create_node(stack_a, p);
 		free_split(p);
 		i++;
 	}
 }
 
-void	f()
-{
-	system("leaks checker");
-}
-
 int	main(int ac, char **av)
 {
-	atexit(f);
 	t_list	*stack_a;
 	t_list	*stack_b;
 	char	*file;

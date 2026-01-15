@@ -6,11 +6,12 @@
 /*   By: anait-il <anait-il@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 11:27:25 by anait-il          #+#    #+#             */
-/*   Updated: 2026/01/12 11:27:28 by anait-il         ###   ########.fr       */
+/*   Updated: 2026/01/15 15:47:22 by anait-il         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+#include "checker.h"
 
 size_t	ft_strlen(const char *str)
 {
