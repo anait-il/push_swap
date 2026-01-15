@@ -68,7 +68,21 @@ At the end of execution:
 - Otherwise, it prints `KO`
 - If an invalid instruction is encountered, it prints `Error`
 
-## Allowed Instructions
+### Compilation
+
+To compile  `checker`:
+
+```
+make bonus
+```
+
+### checker (bonus)
+
+```
+./checker 4 2 7 1 3
+```
+
+### Allowed Instructions
 
 The following operations are allowed to manipulate the stacks:
 
@@ -88,20 +102,6 @@ The following operations are allowed to manipulate the stacks:
 
 These are the only operations permitted to sort the stack.
 
-
-### Compilation
-
-To compile  `checker`:
-
-```
-make bonus
-```
-
-### checker (bonus)
-
-```
-./push_swap 4 2 7 1 3 | ./checker 4 2 7 1 3
-```
 Output:
 
 - OK if the stack is correctly sorted
