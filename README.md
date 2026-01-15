@@ -38,6 +38,10 @@ The program will output a sequence of instructions to standard output, such as:
 sa
 ra
 ```
+If the integers given as a parametre is not valid, the program will display:
+```
+Error
+```
 
 ### Cleaning
 
