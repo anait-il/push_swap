@@ -113,3 +113,12 @@ Output:
 - 42 subject PDF: push_swap
 
 - [Push Swap — A journey to find most efficient sorting algorithm](https://medium.com/@ayogun/push-swap-c1f5d2d41e97)
+
+### Use of AI
+
+
+AI was used only to help understand some concepts about algorithm complexity,  
+like Big-O notation.  
+
+All the code, logic, and implementation were written by me.
+
