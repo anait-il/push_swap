@@ -80,7 +80,7 @@ To compile  `checker`:
 make bonus
 ```
 
-### checker (bonus)
+### Execution
 
 ```
 ./checker 4 2 7 1 3
